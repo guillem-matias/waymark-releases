@@ -113,6 +113,9 @@ other working.
 Both agents read the same saved tasks, kept under `.waymark/` in the working copy. To change agents, close the one
 you're working in, start the other in the same working copy, and ask it to continue the task.
 
+To give both agents one set of project rules, make `AGENTS.md` a symlink to `CLAUDE.md` (`ln -s CLAUDE.md AGENTS.md`):
+Codex reads `AGENTS.md` without following `@` imports, so an `AGENTS.md` holding `@CLAUDE.md` gives it none of your rules.
+
 ### Hooks
 
 Hooks are optional. Waymark works at three **rigor levels**, Light, Standard and Rigorous, which the agent picks from
